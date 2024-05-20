@@ -1,0 +1,127 @@
+<div class="container mb-4">
+    <h1>Notes</h1>
+    <hr>
+  
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-header">
+            Add Note
+          </div>
+          <div class="card-body">
+            <form (submit)="addNote()">
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" [(ngModel)]="newNote.title">
+              </div>
+              <div class="form-group">
+                <label for="content">Content</label>
+                <textarea class="form-control" id="content" [(ngModel)]="newNote.content"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="categories">Categories</label>
+                <select class="form-control" id="categories" [(ngModel)]="newNote.categories" [ngModelOptions]="{standalone: true}" multiple>
+                  <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Add Note</button>
+            </form>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-8">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let note of activeNotes">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h3>{{ note.title }}</h3>
+                <p>{{ note.content }}</p>
+                <p>Categories: {{ note.categories.join(', ') }}</p>
+              </div>
+              <div>
+                <button type="button" class="btn btn-secondary mx-1" (click)="editNoteModal(note)" data-toggle="modal" data-target="#edit-note-modal">Edit</button>
+                <button type="button" class="btn btn-secondary mx-1" (click)="archiveNoteModal(note)" data-toggle="modal" data-target="#archive-note-modal">Archive</button>
+                <button type="button" class="btn btn-danger mx-1" (click)="deleteNoteModal(note)" data-toggle="modal" data-target="#delete-note-modal">Delete</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Edit Note Modal -->
+  <div class="modal fade" id="edit-note-modal" tabindex="-1" role="dialog" aria-labelledby="edit-note-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="edit-note-modal-label">Edit Note</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form (submit)="editNote()">
+            <div class="form-group">
+              <label for="modal-title">Title</label>
+              <input type="text" class="form-control" id="modal-title" [(ngModel)]="editNoteTitle">
+            </div>
+            <div class="form-group">
+              <label for="modal-content">Content</label>
+              <textarea class="form-control" id="modal-content" [(ngModel)]="editNoteContent"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="modal-categories">Categories</label>
+              <select class="form-control" id="modal-categories" [(ngModel)]="editNoteCategories" [ngModelOptions]="{standalone: true}" multiple>
+                <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-success">Save Changes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Archive Note Modal -->
+  <div class="modal fade" id="archive-note-modal" tabindex="-1" role="dialog" aria-labelledby="archive-note-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="archive-note-modal-label">Archive Note</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to archive this note?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-secondary" (click)="archiveNote()">Archive</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Delete Note Modal -->
+  <div class="modal fade" id="delete-note-modal" tabindex="-1" role="dialog" aria-labelledby="delete-note-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="delete-note-modal-label">Delete Note</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete this note?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" (click)="deleteNote()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
