@@ -1,0 +1,38 @@
+-- Create the categories table
+CREATE TABLE categories (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+-- Create the notes table
+CREATE TABLE notes (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT,
+    archived BOOLEAN DEFAULT FALSE,
+    category_id BIGINT,
+    FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
+-- Optionally, add an index on the category_id column for better performance
+CREATE INDEX idx_notes_category_id ON notes(category_id);
+
+
+
+-- Add a new column for the category ID in the notes table
+ALTER TABLE notes
+ADD COLUMN category_id BIGINT,
+ADD CONSTRAINT fk_notes_category
+FOREIGN KEY (category_id)
+REFERENCES categories(id);
+
+
+-- Create a new migration script with a suitable name, e.g., V2__add_category_to_notes.sql
+
+-- Add a new column for the category ID in the notes table
+ALTER TABLE notes
+ADD COLUMN category_id BIGINT,
+ADD CONSTRAINT fk_notes_category
+FOREIGN KEY (category_id)
+REFERENCES categories(id);
+

@@ -1,0 +1,10 @@
+<!-- Updated category-detail.component.html -->
+<div class="container">
+  <form (submit)="saveCategory()" class="form-group">
+    <div class="mb-3">
+      <label for="categoryName" class="form-label">Name:</label>
+      <input type="text" id="categoryName" required placeholder="Enter category name" [(ngModel)]="currentCategory.name" name="name" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">{{ isNew ? 'Create' : 'Save' }}</button>
+  </form>
+</div>

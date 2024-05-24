@@ -1,0 +1,28 @@
+/* styles.css */
+
+/* Global Styles */
+
+/* styles.css */
+
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Bootstrap Overrides */
+
+/* Optionally add Bootstrap overrides here if needed */
+
+/* Custom Styles */
+
+/* Add your custom global styles here */
+

@@ -1,0 +1,18 @@
+<!-- Updated note-list.component.html -->
+<div class="note-list container">
+  <div class="row">
+    <div *ngFor="let note of notes" class="col-12 col-md-6 col-lg-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title"> {{ note.title }}</h3>
+          <p class="card-text"> Note content: {{ note.content }}</p>
+          <p> Category: {{ note.category?.name }}</p>
+          <p> Archived: {{ note.archived ? 'Yes' : 'No' }}</p>
+          <button *ngIf="note.id !== null && note.id !== undefined" (click)="deleteNote(note.id)" class="btn btn-danger">Delete</button>
+          <button *ngIf="!note.archived && note.id !== null && note.id !== undefined" (click)="archiveNote(note.id)" class="btn btn-primary">Archive</button>
+          <button *ngIf="note.archived && note.id !== null && note.id !== undefined" (click)="unarchiveNote(note.id)" class="btn btn-secondary">Unarchive</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

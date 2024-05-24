@@ -1,0 +1,21 @@
+/* Updated category-list.component.css */
+.category-container {
+    margin-bottom: 1.5rem; /* Bootstrap's spacing scale */
+  }
+  
+  .category-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: .25rem; /* Bootstrap's border-radius */
+    padding: .5rem; /* Bootstrap's spacing scale */
+    margin-bottom: .5rem; /* Bootstrap's spacing scale */
+  }
+  
+  .category-actions {
+    margin-top: .5rem; /* Bootstrap's spacing scale */
+  }
+  
+  .category-actions button {
+    margin-right: .25rem; /* Bootstrap's spacing scale */
+  }
+  

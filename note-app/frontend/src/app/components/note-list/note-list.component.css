@@ -1,0 +1,36 @@
+/* Updated note-list.component.css */
+.note-form .form-group {
+  margin-bottom: 1.25rem;
+}
+
+.note-form .form-control {
+  width: 100%;
+  padding: .5rem;
+  margin-bottom: .5rem;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+}
+
+.note-form button {
+  padding: .375rem .75rem;
+  border-radius: .25rem;
+}
+
+/* Bootstrap classes used for buttons */
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}

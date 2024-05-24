@@ -1,0 +1,16 @@
+/* Updated filter.component.css */
+.filter-container {
+    margin-bottom: 1.5rem; /* Bootstrap's spacing scale */
+  }
+  
+  .filter-label {
+    font-weight: bold;
+    margin-right: .5rem; /* Bootstrap's spacing scale */
+  }
+  
+  .filter-select {
+    padding: .5rem; /* Bootstrap's spacing scale */
+    border: 1px solid #ced4da; /* Bootstrap's border color */
+    border-radius: .25rem; /* Bootstrap's border-radius */
+  }
+  

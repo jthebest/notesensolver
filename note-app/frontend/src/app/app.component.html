@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Notes App ensolvers</h1>
+  <nav class="nav nav-tabs">
+    <a [routerLink]="['/categories']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">List Categories</a>
+    <a [routerLink]="['/categories/new']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">New Category</a>
+    <a [routerLink]="['/notes/new']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">New Note</a>
+    <a [routerLink]="['/notes']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">List Notes</a>
+    <a [routerLink]="['/filter']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Filter Notes by Category</a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

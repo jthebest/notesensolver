@@ -1,9 +1,0 @@
-.card-body {
-    max-height: 300px;
-    overflow-y: auto;
-  }
-  
-  .list-group-item .btn {
-    font-size: 0.7rem;
-    padding: 0.25rem 0.5rem;
-  }
