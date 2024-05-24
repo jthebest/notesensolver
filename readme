@@ -1,0 +1,101 @@
+# Note Application
+
+This is a simple web application for managing notes, developed as part of the challenge ensolvers `delcastillogonzalez-09876b/CHALLENGE.md`. The application is built using Angular 17, Bootstrap 5, Node.js 21, and Java 17.
+
+## Frontend
+frontend/
+|__ src/
+    |__ app/
+        |__ components/
+            |__ note-list/
+            |   |__ note-list.component.html
+            |   |__ note-list.component.ts
+            |__ note-detail/
+            |   |__ note-detail.component.html
+            |   |__ note-detail.component.ts
+            |__ category-list/
+            |   |__ category-list.component.html
+            |   |__ category-list.component.ts
+            |__ category-detail/
+            |   |__ category-detail.component.html
+            |   |__ category-detail.component.ts
+            |__ filter/
+            |   |__ filter.component.html
+            |   |__ filter.component.ts
+        |__ services/
+            |__ note.service.ts
+            |__ category.service.ts
+        |__ models/
+            |__ note.model.ts
+            |__ category.model.ts
+        |__ app-routing.module.ts
+        |__ app.module.ts
+    |__ assets/
+    |__ styles.css
+The frontend of the application is developed in Angular 17 with Bootstrap 5 for responsive design. It consists of the following components:
+
+- `NoteDetail`: For creating and editing notes
+- `NoteList`: Displays a list of all notes
+- `CategoryList`: Displays a list of all categories
+- `CategoryDetail`: For creating and editing categories
+- `Filter`: For filtering notes by category
+
+It also includes two services for handling CRUD operations:
+
+- `NoteService`: Handles operations for notes
+- `CategoryService`: Handles operations for categories
+
+And two interfaces for mapping data:
+
+- `Note`: Interface for note objects
+- `Category`: Interface for category objects
+
+## Backend
+backend/
+|__ src/
+    |__ main/
+        |__ java/
+            |__ com/
+                |__ yourcompany/
+                    |__ backend/
+                        |__ controllers/
+                        |   |__ NoteController.java
+                        |   |__ CategoryController.java
+                        |__ services/
+                        |   |__ NoteService.java
+                        |   |__ CategoryService.java
+                        |__ repositories/
+                        |   |__ NoteRepository.java
+                        |   |__ CategoryRepository.java
+                        |__ models/
+                        |   |__ Note.java
+                        |   |__ Category.java
+                        |__ BackendApplication.java
+        |__ resources/
+            |__ application.properties
+            |__ script/
+            |__ |__Scriptdatabase.txt
+This is a basic structure to get you started
+The backend of the application is developed in Java 17 with Spring Boot. It uses MySQL as the database, and you need to run the script `Scriptdatabase.txt` located in the resources folder to set up the database.
+
+It consists of the following components:
+
+- Controllers:
+  - `NoteController`: Handles HTTP requests related to notes
+  - `CategoryController`: Handles HTTP requests related to categories
+
+- Services:
+  - `NoteService`: Implements business logic for notes
+  - `CategoryService`: Implements business logic for categories
+
+- Repositories:
+  - `NoteRepository`: Interface for database operations for notes
+  - `CategoryRepository`: Interface for database operations for categories
+
+- Models:
+  - `Note`: Model for note objects
+  - `Category`: Model for category objects
+
+## Getting Started
+
+To get started with the application, you need to install the required dependencies and set up the environment. For the frontend, you need to install Angular 17, Node.js 21, and Bootstrap 5. For the backend, you need to install Java 17 and add the necessary dependencies such as Web, Spring Boot, JPA, and MySQL JDBC.
